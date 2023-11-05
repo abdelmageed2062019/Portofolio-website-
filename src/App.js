@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, createContext, useEffect } from "react";
 
-function App() {
+import { About, Footer, Header, Skills, Work } from "./container";
+import { Navbar, Portofolio } from "./components";
+
+import "./App.scss";
+
+export const themeContext = createContext(null);
+
+const App = () => {
+  const getTheme = () => {
+    return JSON.parse(localStorage.getItem("theme")) || false;
+  };
+
+  const [theme, setTheme] = useState(getTheme);
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <themeContext.Provider value={{ theme, toggleTheme }}>
+      <div className="app">
+        <Portofolio />
+        <Navbar />
+        <Header />
+        <About />
+        <Work />
+        <Skills />
+        <Footer />
+      </div>
+    </themeContext.Provider>
   );
-}
+};
 
 export default App;
