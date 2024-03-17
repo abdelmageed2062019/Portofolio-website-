@@ -8,7 +8,7 @@ import { themeContext } from "../../../src/App";
 
 import "./Navbar.scss";
 
-const Navbar = () => {
+const Navbar = ({ textEnter, textLeave }) => {
   const [toggle, setToggle] = useState(false);
   const { toggleTheme, theme } = useContext(themeContext);
 
@@ -55,7 +55,11 @@ const Navbar = () => {
             />
             <ul>
               {["home", "about", "work", "skills", "contact"].map((item) => (
-                <li key={item}>
+                <li
+                  key={item}
+                  onMouseEnter={textEnter}
+                  onMouseLeave={textLeave}
+                >
                   <a
                     href={`#${item}`}
                     onClick={() => setToggle(false)}

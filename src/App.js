@@ -21,6 +21,7 @@ const App = () => {
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
   };
+
   return (
     <themeContext.Provider value={{ theme, toggleTheme }}>
       <div className="app">

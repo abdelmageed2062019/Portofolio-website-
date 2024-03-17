@@ -25,7 +25,7 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="head-text">Skills & Experience</h2>
+      <h2 className="head-text">Technical Skills</h2>
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
           {skills.map((skill) => (
@@ -33,7 +33,7 @@ const Skills = () => {
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="app__skills-item app__flex"
-              key={skill.id}
+              key={skill.id + skill.name}
             >
               <div
                 className="app__flex"
@@ -46,7 +46,7 @@ const Skills = () => {
           ))}
         </motion.div>
 
-        <motion.div className="app__skills-exp">
+        {/* <motion.div className="app__skills-exp">
           {experience.map((experience) => (
             <motion.div className="app__skills-exp-item" key={experience.id}>
               <div className="app__skills-exp-year">
@@ -77,7 +77,7 @@ const Skills = () => {
               </motion.div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </>
   );
