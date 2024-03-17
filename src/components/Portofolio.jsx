@@ -1,6 +1,6 @@
 import { FaFileDownload } from "react-icons/fa";
 import Tooltip from "./Tooltip";
-import MyCv from "../assets/ABDELMAGEED_RESUME.pdf";
+import MyCv from "../assets/Abdelmageed Hamdi _ Phone_ 01026640658 _ Email_ abdlemageedhamdi@gmail.com.pdf";
 
 const Portofolio = () => {
   const downloadFile = () => {
@@ -10,7 +10,8 @@ const Portofolio = () => {
     // Create an anchor element to trigger the download
     const a = document.createElement("a");
     a.href = fileUrl;
-    a.download = "Abdelmageed-hamdi-cv.pdf"; // Specify the name for the downloaded file
+    a.download =
+      "Abdelmageed Hamdi _ Phone_ 01026640658 _ Email_ abdlemageedhamdi@gmail.com.pdf"; // Specify the name for the downloaded file
     a.style.display = "none";
     document.body.appendChild(a);
     a.click();
@@ -18,7 +19,7 @@ const Portofolio = () => {
   };
   return (
     <div className="fixed-icon">
-      <Tooltip text="Download My Cv">
+      <Tooltip text="My Cv">
         <div className="icon" onClick={downloadFile}>
           <FaFileDownload />
         </div>
