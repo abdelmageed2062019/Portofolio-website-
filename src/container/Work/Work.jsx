@@ -45,17 +45,19 @@ const Work = () => {
       </h2>
 
       <div className="app__work-filter">
-        {["UI/UX", "Next Js", "React Js", "All"].map((item, index) => (
-          <div
-            key={index}
-            onClick={() => handelWorkFilter(item)}
-            className={`app__work-filter-item app__flex p-text ${
-              activeFilter === item ? "item-active" : ""
-            }`}
-          >
-            {item}
-          </div>
-        ))}
+        {["Landing Page", "Next Js", "React Js", "Angular", "All"].map(
+          (item, index) => (
+            <div
+              key={index}
+              onClick={() => handelWorkFilter(item)}
+              className={`app__work-filter-item app__flex p-text ${
+                activeFilter === item ? "item-active" : ""
+              }`}
+            >
+              {item}
+            </div>
+          )
+        )}
       </div>
 
       <motion.div
