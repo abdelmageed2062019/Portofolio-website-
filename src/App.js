@@ -3,6 +3,8 @@ import React, { useState, createContext, useEffect } from "react";
 import { About, Footer, Header, Skills, Work } from "./container";
 import { Navbar, Portofolio } from "./components";
 
+import "react-toastify/dist/ReactToastify.css";
+
 import "./App.scss";
 
 export const themeContext = createContext(null);
