@@ -14,6 +14,7 @@ const Work = () => {
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
   const { theme } = useContext(themeContext);
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
 
   useEffect(() => {
     const query = '*[_type == "works"]';
@@ -22,6 +23,19 @@ const Work = () => {
       setWorks(data);
       setFilterWork(data);
     });
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileOrTablet(window.innerWidth <= 960);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const handelWorkFilter = (item) => {
@@ -83,7 +97,9 @@ const Work = () => {
                   staggerChildren: 0.5,
                   ease: "easeInOut",
                 }}
-                className="app__work-hover app__flex"
+                className={`app__work-hover app__flex ${
+                  isMobileOrTablet ? "opaque" : ""
+                }`}
               >
                 <a href={work.projectLink} target="_blank" rel="noreferrer">
                   <motion.div
