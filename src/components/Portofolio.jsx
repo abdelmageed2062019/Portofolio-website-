@@ -1,17 +1,15 @@
 import { FaFileDownload } from "react-icons/fa";
 import Tooltip from "./Tooltip";
-import MyCv from "../assets/Abdelmageed Hamdi _ Phone_ 01026640658 _ Email_ abdlemageedhamdi@gmail.com.pdf";
+import MyCv from "../assets/Abdelmageed Hamdi _ Phone_ 01026640658 _ Email_ abdelmageedhamdi@gmail.com.pdf.pdf";
 
 const Portofolio = () => {
   const downloadFile = () => {
-    // Define the file URL or file path
     const fileUrl = MyCv;
 
-    // Create an anchor element to trigger the download
     const a = document.createElement("a");
     a.href = fileUrl;
     a.download =
-      "Abdelmageed Hamdi _ Phone_ 01026640658 _ Email_ abdlemageedhamdi@gmail.com.pdf"; // Specify the name for the downloaded file
+      "Abdelmageed Hamdi _ Phone_ 01026640658 _ Email_ abdelmageedhamdi@gmail.com.pdf"; 
     a.style.display = "none";
     document.body.appendChild(a);
     a.click();

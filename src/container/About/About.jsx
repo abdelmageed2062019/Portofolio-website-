@@ -6,21 +6,6 @@ import './About.scss'
 
 import {urlFor, client} from '../../cleint'
 
-// const abouts = [
-//   {title: 'Frontend Development',
-//    description: 'I am a good Frontend Developer,I am good at HTML5, CSS3, SASS, JAVASCRIPT',
-//   imageUrl: images.about01
-//   },
-//   {title: 'Backend Development',
-//   description: 'I am a familair with Backend Technologies',
-//  imageUrl: images.about02
-//  },
-//  {title: 'React Development',
-//  description: 'I am a good at React Hocks, Redux and React liberaries',
-// imageUrl: images.about03
-// },
-// ];
-
 const About = () => {
 
 
