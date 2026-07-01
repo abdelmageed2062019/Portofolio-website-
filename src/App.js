@@ -33,7 +33,17 @@ const App = () => {
 
   return (
     <themeContext.Provider value={{ theme, toggleTheme }}>
-      <div className="app">
+      <div className={`app ${theme === "dark" ? "dark" : ""}`}>
+        {theme === "dark" && (
+          <div className="app__dark-bg">
+            <div
+              className="app__dark-glow"
+              style={{
+                backgroundImage: "radial-gradient(circle 500px at 50% 200px, #3e3e3e, transparent)",
+              }}
+            />
+          </div>
+        )}
         <Navbar />
         <Header />
         <About />

@@ -5,6 +5,10 @@
     background-repeat: repeat;
     background-position: center;
 
+    &.dark {
+        background: transparent !important;
+    }
+
     .app__wrapper {
         padding: 0;
 

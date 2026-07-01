@@ -1,6 +1,22 @@
 .app {
   // background-color: var(--primary-color);
   font-family: var(--font-base);
+  position: relative;
+}
+
+.app__dark-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: #020617;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app__dark-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
 .app__whitebg {
@@ -19,14 +35,17 @@
 }
 
 .dark {
-  background: linear-gradient(110deg, #333 60%, #333 60%) !important;
-  background-color: transparent !important;
   h1,
   h2,
   h3,
   h4,
   p {
     color: #fff !important;
+  }
+
+  &.app__whitebg,
+  &.app__primarybg {
+    background: transparent !important;
   }
 }
 
