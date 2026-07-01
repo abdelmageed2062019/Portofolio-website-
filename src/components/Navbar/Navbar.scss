@@ -153,6 +153,11 @@
             }
         }
 
+        &.dark {
+            background: #020617 !important;
+            background-color: #020617 !important;
+        }
+
         @media screen and (min-width: 900px) {
             display: none;
         }
