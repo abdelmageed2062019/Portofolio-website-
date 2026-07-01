@@ -64,7 +64,7 @@ const Experience = () => {
   const { theme } = useContext(themeContext);
 
   useEffect(() => {
-    const query = '*[_type == "experiences"] | order(year desc)';
+    const query = '*[_type == "experiences"] | order(order asc)';
     
     client.fetch(query)
       .then((data) => {

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { MdDarkMode } from "react-icons/md";
 import { BsFillSunFill } from "react-icons/bs";
 
@@ -43,9 +43,12 @@ const Navbar = ({ textEnter, textLeave }) => {
       >
         <HiMenuAlt4 onClick={() => setToggle(true)} />
 
-        {toggle && (
+        <AnimatePresence>
+          {toggle && (
           <motion.div
-            whileInView={{ x: [200, 0] }}
+            initial={{ x: "100vw" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100vw" }}
             transition={{ duration: 0.85, ease: "easeOut" }}
             className={theme === "dark" ? "dark" : ""}
           >
@@ -78,7 +81,8 @@ const Navbar = ({ textEnter, textLeave }) => {
               </li>
             </ul>
           </motion.div>
-        )}
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

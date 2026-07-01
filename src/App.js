@@ -34,7 +34,6 @@ const App = () => {
   return (
     <themeContext.Provider value={{ theme, toggleTheme }}>
       <div className="app">
-        <Portofolio />
         <Navbar />
         <Header />
         <About />
