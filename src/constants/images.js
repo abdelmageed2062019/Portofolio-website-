@@ -37,7 +37,7 @@ import spotify from "../assets/spotify.png";
 import angular from "../assets/Angular.svg.png";
 import profileGif from "../assets/profile.gif";
 
-export default {
+const images = {
   profileGif,
   email,
   mobile,
@@ -74,3 +74,5 @@ export default {
   spotify,
   angular,
 };
+
+export default images;

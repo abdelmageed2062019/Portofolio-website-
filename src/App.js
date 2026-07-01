@@ -1,7 +1,7 @@
 import React, { useState, createContext, useEffect } from "react";
 
 import { About, Experience, Footer, Header, Skills, Work } from "./container";
-import { Navbar, Portofolio } from "./components";
+import { Navbar } from "./components";
 
 import "react-toastify/dist/ReactToastify.css";
 
